@@ -1,0 +1,200 @@
+:host {
+  display: block;
+}
+
+.contacto-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-margin);
+  position: relative;
+  z-index: 20;
+  margin-top: calc(-1 * var(--space-lg));
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .main-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* ===== Left Column ===== */
+.left-column {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .left-column {
+    grid-column: span 7;
+  }
+}
+
+.whatsapp-card {
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--borderRadius-xl);
+  padding: var(--space-lg);
+  border: 1px solid color-mix(in srgb, var(--color-outline-variant), transparent 70%);
+  box-shadow: 0 4px 20px rgba(123, 84, 85, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  font-size: 200px;
+  color: color-mix(in srgb, var(--color-surface-container-low), transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card-content {
+  position: relative;
+  z-index: 10;
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.whatsapp-btn:hover {
+  box-shadow: 0 8px 16px rgba(244, 194, 194, 0.4);
+  transform: translateY(-2px);
+}
+
+.channel-section {
+  padding-top: var(--space-md);
+  border-top: 1px solid color-mix(in srgb, var(--color-outline-variant), transparent 70%);
+}
+
+.channel-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--color-tertiary);
+  transition: color 0.3s ease;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.channel-link:hover {
+  color: var(--color-primary);
+}
+
+.icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-tertiary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.channel-link:hover .icon-wrap {
+  background-color: var(--color-primary-container);
+}
+
+.icon-wrap .material-symbols-outlined {
+  color: var(--color-on-tertiary-container);
+  font-size: 20px;
+}
+
+/* ===== Right Column ===== */
+.right-column {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .right-column {
+    grid-column: span 5;
+  }
+}
+
+.info-card {
+  background-color: color-mix(in srgb, var(--color-surface-container), transparent 50%);
+  border-radius: var(--borderRadius-xl);
+  padding: var(--space-md);
+  border: 1px solid color-mix(in srgb, var(--color-outline-variant), transparent 80%);
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.info-item .material-symbols-outlined {
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+.map-container {
+  border-radius: var(--borderRadius-xl);
+  overflow: hidden;
+  height: 256px;
+  border: 1px solid color-mix(in srgb, var(--color-outline-variant), transparent 80%);
+  box-shadow: 0 2px 10px rgba(123, 84, 85, 0.05);
+  position: relative;
+}
+
+.map-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}

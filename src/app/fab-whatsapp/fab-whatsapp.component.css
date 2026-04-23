@@ -1,1 +1,125 @@
-/* No additional component-specific styles needed — using Tailwind utilities */
+.fab-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.fab-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Modal Styling */
+.whatsapp-modal {
+  width: 320px;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.modal-header {
+  background-color: #075E54;
+  padding: 1.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body {
+  background-color: #E5DDD5;
+  background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+  background-repeat: repeat;
+  background-size: contain;
+  padding: 1.5rem 1rem;
+  min-height: 200px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.chat-bubble {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  max-width: 85%;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.chat-bubble.received {
+  background-color: #ffffff;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+}
+
+.chat-time {
+  display: block;
+  font-size: 10px;
+  color: #999;
+  text-align: right;
+  margin-top: 4px;
+}
+
+.modal-footer {
+  padding: 0.75rem 1rem;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  background: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  outline: none;
+}
+
+.send-btn {
+  background: none;
+  border: none;
+  color: #075E54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.send-btn:disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-in {
+  animation: slideIn 0.3s ease-out forwards;
+}

@@ -1,7 +1,56 @@
 <!-- FAB WhatsApp -->
-<button
-  class="fixed bottom-8 right-8 text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 z-50 flex items-center justify-center cursor-pointer"
-  style="background-color: #25D366;"
-  aria-label="Contactar por WhatsApp">
-  <span class="material-symbols-outlined" data-icon="chat">chat</span>
-</button>
+<div class="fab-container">
+  <!-- Modal -->
+  @if (isOpen) {
+    <div class="whatsapp-modal shadow-2xl animate-in slide-in-from-bottom-4 duration-300">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-white">spa</span>
+          </div>
+          <div>
+            <h4 class="text-white font-label-md leading-tight">El Jardín de Sara</h4>
+            <p class="text-white/80 text-[11px]">Típicamente responde en minutos</p>
+          </div>
+        </div>
+        <button (click)="toggleModal()" class="text-white/80 hover:text-white transition-colors">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Chat area) -->
+      <div class="modal-body">
+        <div class="chat-bubble received">
+          <p class="text-body-md text-on-surface">¡Hola! 👋 Bienvenido al Jardín de Sara. ¿Buscas algún arreglo para una ocasión especial?</p>
+          <span class="chat-time">10:00</span>
+        </div>
+      </div>
+
+      <!-- Modal Footer (Input) -->
+      <div class="modal-footer">
+        <input 
+          [(ngModel)]="message" 
+          (keyup.enter)="sendMessage()"
+          type="text" 
+          placeholder="Escribe un mensaje..."
+          class="chat-input"
+        />
+        <button (click)="sendMessage()" class="send-btn" [disabled]="!message.trim()">
+          <span class="material-symbols-outlined">send</span>
+        </button>
+      </div>
+    </div>
+  }
+
+  <!-- Button -->
+  <button
+    (click)="toggleModal()"
+    class="fab-btn shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center cursor-pointer"
+    [style.backgroundColor]="isOpen ? '#ffdad6' : '#25D366'"
+    aria-label="Contactar por WhatsApp">
+    <span class="material-symbols-outlined" [class.text-white]="!isOpen" [class.text-on-error-container]="isOpen">
+      {{ isOpen ? 'close' : 'chat' }}
+    </span>
+  </button>
+</div>
