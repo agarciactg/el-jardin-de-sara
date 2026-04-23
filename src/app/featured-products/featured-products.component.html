@@ -1,0 +1,45 @@
+<!-- Featured Products -->
+<section class="px-6 max-w-7xl mx-auto" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+  <!-- Section Title -->
+  <div class="text-center mb-16">
+    <h2 class="font-headline-lg mb-4" style="color: var(--color-on-surface);">Colección Especial</h2>
+    <div class="w-16 h-1 mx-auto rounded-full" style="background-color: var(--color-tertiary-container);"></div>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for (product of products; track product.name) {
+      <div class="group rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 relative"
+        style="background-color: var(--color-surface-container-lowest); border: 1px solid rgba(209,232,211,0.3);">
+        <!-- Image -->
+        <div class="overflow-hidden relative" style="aspect-ratio: 4/5; background-color: var(--color-surface-variant);">
+          <img
+            [alt]="product.imageAlt"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            [src]="product.image"
+          />
+          <!-- Badge -->
+          @if (product.badge) {
+            <div class="absolute top-4 left-4 backdrop-blur-sm px-3 py-1 rounded-full"
+              style="background-color: rgba(189,212,192,0.8);">
+              <span class="font-label-sm" style="color: var(--color-on-tertiary-container);">{{ product.badge }}</span>
+            </div>
+          }
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 text-center">
+          <h3 class="font-headline-md mb-2" style="color: var(--color-on-surface);">{{ product.name }}</h3>
+          <p class="font-body-md mb-4" style="color: var(--color-on-surface-variant);">{{ product.description }}</p>
+          <div class="flex justify-between items-center mt-4">
+            <span class="font-label-md" style="color: var(--color-primary);">{{ product.price }}</span>
+            <button class="font-label-md border-b border-transparent transition-all hover:border-current"
+              style="color: var(--color-primary);">
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
