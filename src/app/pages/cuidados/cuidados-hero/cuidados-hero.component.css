@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.cuidados-hero {
+  padding: var(--space-xl) var(--space-margin);
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-title {
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  color: var(--color-on-surface-variant);
+  max-width: 672px;
+  margin: 0 auto;
+}
