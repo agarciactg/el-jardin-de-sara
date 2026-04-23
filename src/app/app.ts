@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { HeroComponent } from './hero/hero.component';
-import { FeaturedProductsComponent } from './featured-products/featured-products.component';
-import { EmotionalSectionComponent } from './emotional-section/emotional-section.component';
 import { FooterComponent } from './footer/footer.component';
 import { FabWhatsappComponent } from './fab-whatsapp/fab-whatsapp.component';
 
@@ -10,10 +8,8 @@ import { FabWhatsappComponent } from './fab-whatsapp/fab-whatsapp.component';
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterOutlet,
     HeaderComponent,
-    HeroComponent,
-    FeaturedProductsComponent,
-    EmotionalSectionComponent,
     FooterComponent,
     FabWhatsappComponent
   ],

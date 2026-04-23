@@ -2,39 +2,52 @@
 <header class="fixed top-0 w-full z-50 backdrop-blur-lg border-b shadow-sm"
   style="background: rgba(255,255,255,0.8); border-color: rgba(252,231,243,0.2); box-shadow: 0 1px 3px rgba(252,231,243,0.1);">
   <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden p-2 rounded-full transition-all"
+      style="color: #71717a;">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
     <!-- Logo -->
-    <div class="text-2xl italic" style="font-family: 'Noto Serif', serif; color: #f472b6;">
+    <a routerLink="/" class="text-2xl italic no-underline"
+      style="font-family: 'Noto Serif', serif; color: #f472b6;">
       El Jardín de Sara
-    </div>
+    </a>
 
     <!-- Navigation -->
     <nav class="hidden md:flex items-center gap-6">
-      <a class="font-label-md cursor-pointer border-b pb-1 transition-colors duration-500 active:scale-95"
-         style="color: #ec4899; border-color: #f9a8d4;" href="#">
+      <a routerLink="/"
+         routerLinkActive="nav-active"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-link font-label-md cursor-pointer transition-colors duration-500 active:scale-95 hover:opacity-80 no-underline">
         Colecciones
       </a>
-      <a class="font-label-md cursor-pointer transition-colors duration-500 active:scale-95 hover:opacity-80"
-         style="color: #71717a;" href="#">
+      <a routerLink="/nuestra-historia"
+         routerLinkActive="nav-active"
+         class="nav-link font-label-md cursor-pointer transition-colors duration-500 active:scale-95 hover:opacity-80 no-underline">
         Nuestra Historia
       </a>
-      <a class="font-label-md cursor-pointer transition-colors duration-500 active:scale-95 hover:opacity-80"
-         style="color: #71717a;" href="#">
+      <a routerLink="/cuidados"
+         routerLinkActive="nav-active"
+         class="nav-link font-label-md cursor-pointer transition-colors duration-500 active:scale-95 hover:opacity-80 no-underline">
         Cuidados
       </a>
-      <a class="font-label-md cursor-pointer transition-colors duration-500 active:scale-95 hover:opacity-80"
-         style="color: #71717a;" href="#">
+      <a routerLink="/contacto"
+         routerLinkActive="nav-active"
+         class="nav-link font-label-md cursor-pointer transition-colors duration-500 active:scale-95 hover:opacity-80 no-underline">
         Contacto
       </a>
     </nav>
 
     <!-- Actions -->
     <div class="flex items-center gap-4">
-      <button class="font-label-md cursor-pointer transition-colors active:scale-95"
+      <button class="cursor-pointer transition-colors active:scale-95" style="color: #71717a;">
+        <span class="material-symbols-outlined">chat</span>
+      </button>
+      <button class="hidden md:inline-flex font-label-md cursor-pointer transition-all duration-500 px-4 py-2 rounded-full no-underline"
         style="color: #f9a8d4;">
         Comprar Ahora
-      </button>
-      <button class="cursor-pointer transition-colors active:scale-95" style="color: #71717a;">
-        <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
       </button>
     </div>
   </div>

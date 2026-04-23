@@ -1,1 +1,18 @@
-/* No additional component-specific styles needed — using Tailwind utilities */
+/* Navigation link styles */
+.nav-link {
+  color: #71717a;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.5s ease, border-color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f472b6;
+}
+
+/* Active route link */
+.nav-link.nav-active {
+  color: #ec4899;
+  border-bottom-color: #f9a8d4;
+}
