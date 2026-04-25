@@ -1,0 +1,10 @@
+/* Estilos dedicados para section.component */
+.animated-section {
+  position: relative;
+}
+
+/* will-change ayuda a que el navegador optimice el pintado asignando su propia capa
+   a los elementos que sabemos que van a moverse, reduciendo el jank antes de que empiece la animación de GSAP */
+.will-change-transform {
+  will-change: transform, opacity;
+}

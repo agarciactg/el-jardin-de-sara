@@ -1,0 +1,22 @@
+<section #sectionContainer class="animated-section relative flex items-center justify-center min-h-[60vh] overflow-hidden py-24 px-6 mt-16" style="background-color: var(--color-surface-container);">
+  
+  <!-- Background Animado (Efecto Parallax) -->
+  <div #backgroundElement class="absolute inset-0 z-0 bg-cover bg-center opacity-40 will-change-transform"
+       style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQqR6xY1M0mB5208TfFjRzE74G9a-S5J60X7Xy40S40K-Q8H54S-3b9Z4K2fQ00G9B5a58G4_QWXXgKxL0e0Z25D6zMncCUXSgA1U2aTfP2bXYN3GAn20GT_DXAlkSb61xkOFnDFEcQLK78tvhyl3YWrZVLRozNLuccxuWDrOQ9i93RHUURHHs2Pi-FvfGfgNpMERF8-1m6e0KgphKqOQhcJEq8JmeXQ7PhMZuz50ASkYoKY24Lyntnl292dQKtO4E1A1N4PDtxMkhsjoNqNBSU'); mix-blend-mode: multiply;">
+  </div>
+
+  <div class="absolute inset-0 z-0" style="background: linear-gradient(to top, var(--color-background), transparent);"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-4xl w-full text-center flex flex-col items-center gap-6">
+    <h2 #textElement class="font-display-lg text-4xl md:text-6xl will-change-transform" style="color: var(--color-on-surface);">
+      Belleza que Trasciende
+    </h2>
+    <p #textElement class="font-body-lg text-lg md:text-xl max-w-2xl text-on-surface-variant will-change-transform">
+      Nuestras composiciones florales están diseñadas para evocar emociones duraderas. Disfruta la armonía perfecta entre naturaleza y diseño artístico.
+    </p>
+    <a #textElement href="https://wa.me/573222254664" target="_blank" class="mt-8 px-8 py-4 rounded-full font-label-md no-underline shadow-lg transition-transform hover:-translate-y-1 will-change-transform" style="background-color: var(--color-primary-container); color: var(--color-on-primary-container);">
+      Descubre la Colección
+    </a>
+  </div>
+</section>
