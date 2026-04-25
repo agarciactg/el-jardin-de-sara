@@ -4,9 +4,9 @@
   <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
 
     <!-- Mobile Menu Button -->
-    <button class="md:hidden p-2 rounded-full transition-all"
+    <button (click)="toggleMenu()" class="md:hidden p-2 rounded-full transition-all"
       style="color: #71717a;">
-      <span class="material-symbols-outlined">menu</span>
+      <span class="material-symbols-outlined">{{ isMenuOpen ? 'close' : 'menu' }}</span>
     </button>
 
     <!-- Logo -->
@@ -15,7 +15,7 @@
       El Jardín de Sara
     </a>
 
-    <!-- Navigation -->
+    <!-- Navigation (Desktop) -->
     <nav class="hidden md:flex items-center gap-6">
       <a routerLink="/"
          routerLinkActive="nav-active"
@@ -40,15 +40,50 @@
       </a>
     </nav>
 
+    <!-- Mobile Navigation Overlay -->
+    <div *ngIf="isMenuOpen" 
+         class="md:hidden fixed inset-x-0 top-0 z-[100] mobile-overlay pt-24 pb-12 px-8 flex flex-col gap-6 animate-in fade-in slide-in-from-top duration-500">
+      
+      <!-- Subtle Flower Background for Menu -->
+      <span class="material-symbols-outlined absolute right-8 top-32 text-8xl opacity-5 pointer-events-none" style="color: #f472b6;">
+        local_florist
+      </span>
+
+      <button (click)="toggleMenu()" class="absolute top-4 left-8 p-3 rounded-full hover:bg-pink-50 transition-colors" style="color: #71717a;">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      
+      <div class="flex flex-col gap-4">
+        <a routerLink="/" (click)="toggleMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mobile-nav-item text-3xl no-underline">Colecciones</a>
+        <a routerLink="/nuestra-historia" (click)="toggleMenu()" routerLinkActive="active" class="mobile-nav-item text-3xl no-underline">Nuestra Historia</a>
+        <a routerLink="/cuidados" (click)="toggleMenu()" routerLinkActive="active" class="mobile-nav-item text-3xl no-underline">Cuidados</a>
+        <a routerLink="/contacto" (click)="toggleMenu()" routerLinkActive="active" class="mobile-nav-item text-3xl no-underline">Contacto</a>
+      </div>
+      
+      <div class="h-px w-full bg-pink-100 my-2"></div>
+
+      <a href="https://wa.me/573222254664" target="_blank" class="mobile-buy-btn flex items-center justify-center gap-2 py-4 rounded-2xl no-underline font-bold text-lg">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        Comprar Ahora
+      </a>
+      
+      <p class="text-center font-label-sm text-on-surface-variant opacity-60">
+        Cartagena, Colombia 🌸
+      </p>
+    </div>
+
     <!-- Actions -->
     <div class="flex items-center gap-4">
       <button class="cursor-pointer transition-colors active:scale-95" style="color: #71717a;">
         <span class="material-symbols-outlined">chat</span>
       </button>
-      <button class="hidden md:inline-flex font-label-md cursor-pointer transition-all duration-500 px-4 py-2 rounded-full no-underline"
-        style="color: #f9a8d4;">
+      <a class="hidden md:inline-flex font-label-md cursor-pointer transition-all duration-500 px-4 py-2 rounded-full no-underline"
+        style="color: #f9a8d4;"
+        href="https://wa.me/573222254664"
+        target="_blank"
+        >
         Comprar Ahora
-      </button>
+      </a>
     </div>
   </div>
 </header>
